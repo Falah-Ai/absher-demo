@@ -24,4 +24,24 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
+  position: relative;
+}
+
+/* Background image displayed fixed at the bottom, transparent and non-interactive */
+.bg-bottom-image {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure main app content is rendered above the background image */
+.app-content {
+  position: relative;
+  z-index: 1;
 }

@@ -27,7 +27,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <img
+          src="https://sl.bing.net/hsmsL5wv3v2"
+          alt="background"
+          className="bg-bottom-image"
+        />
+        <div className="app-content">{children}</div>
       </body>
     </html>
   );
