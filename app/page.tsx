@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState } from "react";
 
 export default function Home() {
@@ -28,6 +28,14 @@ export default function Home() {
       const data = await res.json();
 
       setResult((prev) => prev + "\nالرد: " + data.answer);
+
+      // قراءة الرد بصوت عالي
+      const utterance = new SpeechSynthesisUtterance(data.answer);
+      utterance.lang = "ar-SA";
+      utterance.rate = 1;
+      utterance.pitch = 1;
+      utterance.volume = 1;
+      window.speechSynthesis.speak(utterance);
 
       if (data.actionUrl) {
         window.location.href = data.actionUrl;
