@@ -24,15 +24,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <header className="absher-header">
+          <div className="container" style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+            <div style={{display:'flex', alignItems:'center', gap:12}}>
+              <div className="brand">أبشر - Demo</div>
+            </div>
+            <nav className="absher-muted" style={{fontSize:14}}>
+              <span style={{marginLeft:12}}>المنصة</span>
+              <span style={{marginLeft:12}}>الخدمات</span>
+            </nav>
+          </div>
+        </header>
+
         <img
           src="https://sl.bing.net/hsmsL5wv3v2"
           alt="background"
           className="bg-bottom-image"
         />
-        <div className="app-content">{children}</div>
+
+        <div className="app-content">
+          <main className="container">{children}</main>
+        </div>
       </body>
     </html>
   );

@@ -84,11 +84,18 @@ export default function Home() {
   };
 
   return (
-    <main style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>🎤 مساعد أبشر التجريبي</h1>
-      <p>قل: "أريد تجديد جواز السفر" أو "أريد تجديد الهوية"</p>
-      <button onClick={startListening}>🎤 اسأل</button>
-      <pre style={{ whiteSpace: "pre-wrap" }}>{result}</pre>
-    </main>
+    <div style={{ marginTop: 22 }}>
+      <div className="card">
+        <h1 style={{ marginTop: 0 }}>🎤 مساعد أبشر التجريبي</h1>
+        <p className="absher-muted">قل: "أريد تجديد جواز السفر" أو "أريد تجديد الهوية"</p>
+
+        <div style={{ marginTop: 18, display: 'flex', gap: 12, alignItems: 'center' }}>
+          <button className="absher-btn" onClick={startListening}>🎤 اسأل</button>
+          <div style={{ flex: 1 }}>
+            <pre style={{ whiteSpace: "pre-wrap", margin: 0 }}>{result}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

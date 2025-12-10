@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #16a34a; /* green background */
-  --foreground: #ffffff; /* white text */
+  --absher-green: #007a3d;
+  --background: #f6f7f6; /* light page background */
+  --foreground: #0b2b17; /* dark text */
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --button-bg: var(--absher-green);
+  --button-color: #ffffff;
 }
 
 @theme inline {
@@ -14,17 +19,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #16a34a; /* keep green in dark mode */
-    --foreground: #ffffff;
+    --background: #0b0f0b;
+    --foreground: #e6f8ec;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans Arabic', 'Helvetica Neue', Arial, sans-serif;
   min-height: 100vh;
   position: relative;
+  direction: rtl;
 }
 
 /* Background image displayed fixed at the bottom, transparent and non-interactive */
@@ -44,4 +50,48 @@ body {
 .app-content {
   position: relative;
   z-index: 1;
+}
+
+/* Absher-like header */
+.absher-header {
+  background: linear-gradient(180deg, var(--absher-green), #006536);
+  color: #ffffff;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.absher-header .brand {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* Centered container */
+.container {
+  max-width: 980px;
+  margin: 28px auto;
+  padding: 0 16px;
+}
+
+/* White card for content */
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 6px 18px rgba(6, 35, 11, 0.08);
+  color: #0b2b17;
+}
+
+.absher-btn {
+  background: var(--button-bg);
+  color: var(--button-color);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.absher-muted {
+  color: var(--muted);
 }
